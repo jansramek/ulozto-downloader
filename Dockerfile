@@ -1,7 +1,7 @@
 FROM python:3.6
 ENV TERM=xterm
 
-RUN pip install --upgrade ulozto-downloader
+RUN pip3 install --upgrade ulozto-downloader
 RUN apt install apt-transport-https
 RUN echo "deb https://deb.torproject.org/torproject.org stretch main" >> /etc/apt/sources.list
 RUN echo "deb-src https://deb.torproject.org/torproject.org stretch main" >> /etc/apt/sources.list
@@ -15,4 +15,4 @@ RUN pip3 install --extra-index-url https://google-coral.github.io/py-repo/ tflit
 
 WORKDIR /d
 
-ENTRYPOINT ["ulozto-downloader --auto-captcha"]
+ENTRYPOINT ["ulozto-downloader", "--auto-captcha"]
