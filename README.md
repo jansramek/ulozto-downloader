@@ -7,13 +7,15 @@ Docker container of [setnicka/ulozto-downloader](https://github.com/setnicka/ulo
 ## Install/Build
 
 ```
-▶ git clone git@github.com:jansramek/ulozto-downloader.git
+▶ git clone https://github.com/jansramek/ulozto-downloader.git
 ▶ cd ulozto-downloader
-▶ docker build -t <image_name> <path_to_build>
+▶ docker build -t ulozto-downloader .
 ```
 
 ## Usage
 
 ```
-▶ docker run -t -v <local_path>:/d ulozto-downloader --parts 16 <https://uloz.to/file/...>
+▶ docker run -t -v <destination_path>:/d ulozto-downloader --parts 16 <https://uloz.to/file/...>
 ```
+Note: `<destination_path>` paramater must be an absolute path to destination folder, where the file will be downloaded to.
+
